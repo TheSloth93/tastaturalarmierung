@@ -3,10 +3,10 @@ var shiftTimeout = null;
 
 if(typeof(jQuery) == 'undefined')
 {
-   throw new Error("LSS-Manager: No jQuery! Aborting!");
+   throw new Error("LSS Tastaturalarmierung: missing jQuery");
 }
 
-$( "#mission-form" ).before('<input class="string form-control" id="search_vehicle" size="50" type="text" style="margin-bottom: 24px">');
+$( "#mission-form" ).before('<div style="width: 100%; padding-bottom: 24px"><input class="string form-control" id="search_vehicle" size="50" type="text" style="margin-bottom: 6px"><br><font style="font-size: 12px">Tastaturalarmierung by ChaosKai93</font></div>');
 $( "#search_vehicle" ).focus();
 
 $(function(){
