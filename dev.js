@@ -56,13 +56,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(0).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(0).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(0).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(0).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(0).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(0).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -75,13 +75,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(1).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(1).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(1).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(1).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(1).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(1).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -94,13 +94,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(2).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(2).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(2).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(2).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(2).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(2).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -113,13 +113,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(3).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(3).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(3).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(3).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(3).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(3).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -132,13 +132,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(4).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(4).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(4).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(4).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(4).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(4).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -151,13 +151,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(5).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(5).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(5).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(5).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(5).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(5).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -170,13 +170,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(6).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(6).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(6).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(6).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(6).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(6).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -189,13 +189,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(7).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(7).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(7).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(7).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(7).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(7).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
@@ -208,13 +208,13 @@ $(function(){
             
             updateTable();
             
-            if($( table + ":visible" ).eq(8).find("input").attr('checked') == "checked")
+            if($( table + ":visible" ).eq(8).find("input").prop('checked') == "checked")
             {
-                $( table + ":visible" ).eq(8).find("input").attr('checked', false);
+                $( table + ":visible" ).eq(8).find("input").prop('checked', false);
             }
             else
             {
-                $( table + ":visible" ).eq(8).find("input").attr('checked', true);
+                $( table + ":visible" ).eq(8).find("input").prop('checked', true);
             }
             
             //$( "#search_vehicle" ).val(""); updateTable();
