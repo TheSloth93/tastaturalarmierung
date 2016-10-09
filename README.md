@@ -11,3 +11,25 @@ LSS Tastaturalarmierung ist eine Erweiterung für das Online Spiel "Leitstellens
 - [Enter] Wenn das Eingabefeld leer ist, wird die Alarmierung abgesendet
 - [Enter] Wenn ein Text im Eingabefeld steht, werden alle sichtbaren Fahrzeuge markiert
 - [1 - 9] Markiert das **X** sichtbare Fahrzeuge in der Liste
+
+### Installation
+Um das Script im Leitstellenspiel auszuführen, benötigst du ein passendes Plugin für deinen Browser.
+
+> Firefox:
+> [Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/)
+
+> Chrome:
+> [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de)
+
+> Safari:
+> [Tampermonkey](http://tampermonkey.net/)
+
+> Opera:
+> [Violent-Monkey](https://addons.opera.com/de/extensions/details/violent-monkey/?display=de)
+
+##### Das Script:
+> https://github.com/ChaosKai/tastaturalarmierung/raw/master/user.js
+
+### Changelog
+> **2016-10-10-0015**
+> - Release
