@@ -231,7 +231,12 @@ function updateTable()
 
         if( $( this ).find("label").text().toLowerCase().indexOf( $( "#search_vehicle" ).val().toLowerCase() ) >= 0 )
         {
-            // Found it
+            // Found vehicle name
+            $( this ).css("display", "table-row");
+        }
+        else if( $( this ).find("a").text().toLowerCase().indexOf( $( "#search_vehicle" ).val().toLowerCase() ) >= 0 )
+        {
+            // Found station name
             $( this ).css("display", "table-row");
         }
         else
