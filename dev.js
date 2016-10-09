@@ -42,6 +42,12 @@ $(function(){
             clearTimeout(shiftTimeout);
             shiftTimeout = setTimeout(function(){ shiftPressed = false;; }, 2000);
         }
+        
+        // - - - - - Delete  - - - - -
+        if(event.which == 8)
+        {
+            $( "#search_vehicle" ).val(""); updateTable();
+        }
 
         // - - - - - Ergebnis 1  - - - - -
         if(event.which == 49)
@@ -59,7 +65,7 @@ $(function(){
                 $( table + ":visible" ).eq(0).find("input").attr('checked', true);
             }
             
-            $( "#search_vehicle" ).val("");
+            //$( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 2  - - - - -
@@ -78,7 +84,7 @@ $(function(){
                 $( table + ":visible" ).eq(1).find("input").attr('checked', true);
             }
             
-            $( "#search_vehicle" ).val("");
+            //$( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 3  - - - - -
@@ -97,7 +103,121 @@ $(function(){
                 $( table + ":visible" ).eq(2).find("input").attr('checked', true);
             }
             
-            $( "#search_vehicle" ).val("");
+            //$( "#search_vehicle" ).val(""); updateTable();
+        }
+
+        // - - - - - Ergebnis 4  - - - - -
+        if(event.which == 52)
+        {
+            $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
+            
+            updateTable();
+            
+            if($( table + ":visible" ).eq(3).find("input").attr('checked') == "checked")
+            {
+                $( table + ":visible" ).eq(3).find("input").attr('checked', false);
+            }
+            else
+            {
+                $( table + ":visible" ).eq(3).find("input").attr('checked', true);
+            }
+            
+            //$( "#search_vehicle" ).val(""); updateTable();
+        }
+
+        // - - - - - Ergebnis 5  - - - - -
+        if(event.which == 53)
+        {
+            $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
+            
+            updateTable();
+            
+            if($( table + ":visible" ).eq(4).find("input").attr('checked') == "checked")
+            {
+                $( table + ":visible" ).eq(4).find("input").attr('checked', false);
+            }
+            else
+            {
+                $( table + ":visible" ).eq(4).find("input").attr('checked', true);
+            }
+            
+            //$( "#search_vehicle" ).val(""); updateTable();
+        }
+
+        // - - - - - Ergebnis 6  - - - - -
+        if(event.which == 54)
+        {
+            $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
+            
+            updateTable();
+            
+            if($( table + ":visible" ).eq(5).find("input").attr('checked') == "checked")
+            {
+                $( table + ":visible" ).eq(5).find("input").attr('checked', false);
+            }
+            else
+            {
+                $( table + ":visible" ).eq(5).find("input").attr('checked', true);
+            }
+            
+            //$( "#search_vehicle" ).val(""); updateTable();
+        }
+
+        // - - - - - Ergebnis 7  - - - - -
+        if(event.which == 55)
+        {
+            $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
+            
+            updateTable();
+            
+            if($( table + ":visible" ).eq(6).find("input").attr('checked') == "checked")
+            {
+                $( table + ":visible" ).eq(6).find("input").attr('checked', false);
+            }
+            else
+            {
+                $( table + ":visible" ).eq(6).find("input").attr('checked', true);
+            }
+            
+            //$( "#search_vehicle" ).val(""); updateTable();
+        }
+
+        // - - - - - Ergebnis 8  - - - - -
+        if(event.which == 56)
+        {
+            $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
+            
+            updateTable();
+            
+            if($( table + ":visible" ).eq(7).find("input").attr('checked') == "checked")
+            {
+                $( table + ":visible" ).eq(7).find("input").attr('checked', false);
+            }
+            else
+            {
+                $( table + ":visible" ).eq(7).find("input").attr('checked', true);
+            }
+            
+            //$( "#search_vehicle" ).val(""); updateTable();
+        }
+
+        // - - - - - Ergebnis 9  - - - - -
+        if(event.which == 57)
+        {
+            $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
+            
+            updateTable();
+            
+            if($( table + ":visible" ).eq(8).find("input").attr('checked') == "checked")
+            {
+                $( table + ":visible" ).eq(8).find("input").attr('checked', false);
+            }
+            else
+            {
+                $( table + ":visible" ).eq(8).find("input").attr('checked', true);
+            }
+            
+            //$( "#search_vehicle" ).val(""); updateTable();
         }
         
     });
