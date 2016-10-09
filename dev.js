@@ -65,7 +65,7 @@ $(function(){
                 $( table + ":visible" ).eq(0).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 2  - - - - -
@@ -84,7 +84,7 @@ $(function(){
                 $( table + ":visible" ).eq(1).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 3  - - - - -
@@ -103,7 +103,7 @@ $(function(){
                 $( table + ":visible" ).eq(2).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 4  - - - - -
@@ -122,7 +122,7 @@ $(function(){
                 $( table + ":visible" ).eq(3).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 5  - - - - -
@@ -141,7 +141,7 @@ $(function(){
                 $( table + ":visible" ).eq(4).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 6  - - - - -
@@ -160,7 +160,7 @@ $(function(){
                 $( table + ":visible" ).eq(5).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 7  - - - - -
@@ -179,7 +179,7 @@ $(function(){
                 $( table + ":visible" ).eq(6).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 8  - - - - -
@@ -198,7 +198,7 @@ $(function(){
                 $( table + ":visible" ).eq(7).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
 
         // - - - - - Ergebnis 9  - - - - -
@@ -217,7 +217,7 @@ $(function(){
                 $( table + ":visible" ).eq(8).find("input").prop('checked', true);
             }
             
-            //$( "#search_vehicle" ).val(""); updateTable();
+            $( "#search_vehicle" ).val(""); updateTable();
         }
         
     });
