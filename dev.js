@@ -21,13 +21,16 @@ html = html + '      <a id="key_settings_button" href="#" class="btn btn-success
 html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 16px; margin-top: 2px"></span>';
 html = html + '      </a>';
 html = html + '   </div>';
-html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-bottom: 6px">';
-html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px; margin: 0; margin-left: 6px" title="Einstellungen" onclick="toggleKeySettings()">';
-html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 16px; margin-top: 2px"></span>';
+html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-top: 12px; padding-bottom: 12px">';
+html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-right: 0px" title="Einstellungen">';
+html = html + '         FHZ 1';
+html = html + '      </a>';
+html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-right: 6px" title="Einstellungen">';
+html = html + '         FHZ 2';
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2242)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2249)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -39,6 +42,9 @@ $( "#search_vehicle" ).focus();
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 $(function(){
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // -             Key Buttons Show/Hide
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     $( "#key_settings_button" ).on( "click", function()
     {
         if( $("#key_settings").css("display") == "none" )
@@ -53,6 +59,9 @@ $(function(){
         }
     });
    
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // -             Update Table on Key Input
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     $( "#search_vehicle" ).on( "input", function() {
         updateTable();
     });
