@@ -6,6 +6,10 @@ if(typeof(jQuery) == 'undefined')
    throw new Error("LSS Tastaturalarmierung: missing jQuery");
 }
 
+// - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+// -             Create HTML Code
+// - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
 var html = '';
 html = html + '<div style="width: 100%; padding-bottom: 24px">';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
@@ -13,20 +17,47 @@ html = html + '      <h4>Tastaturalarmierung</h4>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; display: flex; padding-bottom: 6px">';
 html = html + '      <input class="string form-control" id="search_vehicle" size="50" type="text">';
-html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px; margin: 0; margin-right: 6px" title="Einstellungen" onclick="toggleKeySettings()">';
+html = html + '      <a id="key_settings_button" href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px; margin: 0; margin-left: 6px" title="Einstellungen" onclick="toggleKeySettings()">';
+html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 16px; margin-top: 2px"></span>';
+html = html + '      </a>';
+html = html + '   </div>';
+html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-bottom: 6px">';
+html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px; margin: 0; margin-left: 6px" title="Einstellungen" onclick="toggleKeySettings()">';
 html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 16px; margin-top: 2px"></span>';
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2212)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px; float: right">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2212)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
 $( "#mission-form" ).before(html);
 $( "#search_vehicle" ).focus();
 
+// - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+// -             Create HTML Code
+// - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+function toggleKeySettings()
+{
+   if( $("key_settings").css("display") == "none" )
+   {
+      $("key_settings").css("display", "flex");
+      $("key_settings_button").removeClass("btn-success").addClass("btn-primary");
+   }
+   else
+   {
+      $("key_settings").css("display", "none");
+      $("key_settings_button").removeClass("btn-primary").addClass("btn-success");
+   }
+}
+
+// - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+// -             Create HTML Code
+// - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
 $(function(){
-    $( "#search_vehicle" ).on("input", function() {
+    $( "#search_vehicle" ).on( "input", function() {
         updateTable();
     });
     
