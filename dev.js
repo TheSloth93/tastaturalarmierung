@@ -11,9 +11,14 @@ if(typeof(jQuery) == 'undefined')
 // -             Create local Storage
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-// - - - - - Enter - - - - -
+// - - - - - Submit - - - - -
 if (localStorage.getItem("key_submit") === null) {
     setKey("key_submit", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':13});
+}
+
+// - - - - - Select All - - - - -
+if (localStorage.getItem("key_select_all") === null) {
+    setKey("key_submit", {'altKey':false,'ctrlKey':true,'metaKey':false,'key':13});
 }
 
 // - - - - - Delete - - - - -
@@ -82,15 +87,26 @@ html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-top: 12px; padding-bottom: 12px">';
-html = html + '      <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 0px" title="Taste zum Alarmieren belegen">';
-html = html + '         Alarmieren';
-html = html + '      </a>';
-html = html + '      <a id="key_set_fhz1" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Taste zum markieren des 1. Fahrzeugs belegen">';
-html = html + '         FHZ 1';
-html = html + '      </a>';
-html = html + '      <a id="key_set_fhz2" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Taste zum markieren des 2. Fahrzeugs belegen">';
-html = html + '         FHZ 2';
-html = html + '      </a>';
+html = html + '      <table id="key_settings_table" class="table table-striped tablesorter tablesorter-default">';
+html = html + '         <tbody>';
+html = html + '            <tr>';
+html = html + '               <td><font>Alarmieren</font></td>';
+html = html + '               <td>';
+html = html + '                  <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0">Taste belegen</a>';
+html = html + '                  <a id="key_del_submit" href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0">Belegung löschen</a>';
+html = html + '               </td>';
+html = html + '            </tr>';
+html = html + '         </tbody>';
+html = html + '      </table>';
+html = html + '         <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 0px" title="Taste zum Alarmieren belegen">';
+html = html + '            Alarmieren';
+html = html + '         </a>';
+html = html + '         <a id="key_set_fhz1" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Taste zum markieren des 1. Fahrzeugs belegen">';
+html = html + '            FHZ 1';
+html = html + '         </a>';
+html = html + '         <a id="key_set_fhz2" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Taste zum markieren des 2. Fahrzeugs belegen">';
+html = html + '            FHZ 2';
+html = html + '         </a>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
 html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0057)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
