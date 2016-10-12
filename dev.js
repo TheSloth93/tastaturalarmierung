@@ -11,14 +11,14 @@ html = html + '<div style="width: 100%; padding-bottom: 24px">';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
 html = html + '      <h4>Tastaturalarmierung</h4>';
 html = html + '   </div>';
-html = html + '   <div style="width: 100%; display: flex; align-items: flex-start; padding-bottom: 6px">';
+html = html + '   <div style="width: 100%; display: flex; padding-bottom: 6px">';
 html = html + '      <input class="string form-control" id="search_vehicle" size="50" type="text">';
-html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px" title="Einstellungen">';
-html = html + '         <span class="glyphicon glyphicon-cog"></span>';
+html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px; margin: 0; margin-right: 6px" title="Einstellungen" onclick="toggleKeySettings()">';
+html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 16px; margin-top: 2px"></span>';
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2158)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2212)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px; float: right">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
