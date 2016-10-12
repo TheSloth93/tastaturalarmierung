@@ -22,15 +22,15 @@ html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-top: 12px; padding-bottom: 12px">';
-html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-right: 0px" title="Einstellungen">';
+html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 0px" title="Einstellungen">';
 html = html + '         FHZ 1';
 html = html + '      </a>';
-html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-right: 6px" title="Einstellungen">';
+html = html + '      <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Einstellungen">';
 html = html + '         FHZ 2';
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2249)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2253)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -50,12 +50,12 @@ $(function(){
         if( $("#key_settings").css("display") == "none" )
         {
             $("#key_settings").css("display", "flex");
-            $("#key_settings_button").removeClass("btn-success").addClass("btn-error");
+            $("#key_settings_button").removeClass("btn-success").addClass("btn-warning");
         }
         else
         {
             $("#key_settings").css("display", "none");
-            $("#key_settings_button").removeClass("btn-error").addClass("btn-success");
+            $("#key_settings_button").removeClass("btn-warning").addClass("btn-success");
         }
     });
    
