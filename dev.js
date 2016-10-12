@@ -13,62 +13,62 @@ if(typeof(jQuery) == 'undefined')
 
 // - - - - - Submit - - - - -
 if (localStorage.getItem("key_submit") === null) {
-    setKey("key_submit", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':13});
+    setKeyStorage("key_submit", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':13});
 }
 
 // - - - - - Select All - - - - -
 if (localStorage.getItem("key_select_all") === null) {
-    setKey("key_submit", {'altKey':false,'ctrlKey':true,'metaKey':false,'key':13});
+    setKeyStorage("key_submit", {'altKey':false,'ctrlKey':true,'metaKey':false,'key':13});
 }
 
 // - - - - - Delete - - - - -
 if (localStorage.getItem("key_delete") === null) {
-    setKey("key_delete", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':8});
+    setKeyStorage("key_delete", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':8});
 }
 
 // - - - - - FHZ 1 - - - - -
 if (localStorage.getItem("key_fhz1") === null) {
-    setKey("key_fhz1", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':49});
+    setKeyStorage("key_fhz1", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':49});
 }
 
 // - - - - - FHZ 2 - - - - -
 if (localStorage.getItem("key_fhz2") === null) {
-    setKey("key_fhz2", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':50});
+    setKeyStorage("key_fhz2", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':50});
 }
 
 // - - - - - FHZ 3 - - - - -
 if (localStorage.getItem("key_fhz3") === null) {
-    setKey("key_fhz3", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':51});
+    setKeyStorage("key_fhz3", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':51});
 }
 
 // - - - - - FHZ 4 - - - - -
 if (localStorage.getItem("key_fhz4") === null) {
-    setKey("key_fhz4", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':52});
+    setKeyStorage("key_fhz4", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':52});
 }
 
 // - - - - - FHZ 5 - - - - -
 if (localStorage.getItem("key_fhz5") === null) {
-    setKey("key_fhz5", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':53});
+    setKeyStorage("key_fhz5", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':53});
 }
 
 // - - - - - FHZ 6 - - - - -
 if (localStorage.getItem("key_fhz6") === null) {
-    setKey("key_fhz6", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':54});
+    setKeyStorage("key_fhz6", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':54});
 }
 
 // - - - - - FHZ 7 - - - - -
 if (localStorage.getItem("key_fhz7") === null) {
-    setKey("key_fhz7", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':55});
+    setKeyStorage("key_fhz7", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':55});
 }
 
 // - - - - - FHZ 8 - - - - -
 if (localStorage.getItem("key_fhz8") === null) {
-    setKey("key_fhz8", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':56});
+    setKeyStorage("key_fhz8", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':56});
 }
 
 // - - - - - FHZ 9 - - - - -
 if (localStorage.getItem("key_fhz9") === null) {
-    setKey("key_fhz9", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':57});
+    setKeyStorage("key_fhz9", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':57});
 }
 
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -92,22 +92,22 @@ html = html + '         <tbody>';
 html = html + '            <tr>';
 html = html + '               <td style="text-align: left"><font style="font-weight: 700">Alarmieren</font></td>';
 html = html + '               <td style="text-align: right">';
-html = html + '                  <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0">Taste belegen</a>';
-html = html + '                  <a id="key_del_submit" href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0">Belegung löschen</a>';
+html = html + '                  <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0" onclick="setKey(' + "'submit'" + ')">Taste belegen</a>';
+html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'submit'" + ')">Belegung löschen</a>';
 html = html + '               </td>';
 html = html + '            </tr>';
 html = html + '            <tr>';
 html = html + '               <td style="text-align: left"><font style="font-weight: 700">Eingabe löschen</font></td>';
 html = html + '               <td style="text-align: right">';
-html = html + '                  <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0">Taste belegen</a>';
-html = html + '                  <a id="key_del_submit" href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0">Belegung löschen</a>';
+html = html + '                  <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0" onclick="setKey(' + "'delete'" + ')">Taste belegen</a>';
+html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'delete'" + ')">Belegung löschen</a>';
 html = html + '               </td>';
 html = html + '            </tr>';
 html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0125)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0145)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -144,24 +144,6 @@ $(function(){
    
     var set_key_mode = false;
    
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        // -             Key: Submit
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        $( "#key_set_submit" ).on( "click", function()
-        {
-            set_key_mode = "key_submit";
-            $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
-            $( "#search_vehicle" ).focus();
-        });
-   
-        $( "#key_del_submit" ).on( "click", function()
-        {
-            set_key_mode = false;
-            setKey("key_submit", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
-            $( "#search_vehicle" ).val("Die Taste wurde gelöscht!").delay(1500).val("");
-            $( "#search_vehicle" ).focus();
-        });
-   
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // -             Update Table on Key Input
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -186,7 +168,7 @@ $(function(){
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
             // - - - - - Enter  - - - - -
-            if(event.which == getKey("key_submit").key)
+            if(event.altKey == getKey("key_submit").altKey && event.ctrlKey == getKey("key_submit").ctrlKey && event.metaKey == getKey("key_submit").metaKey && event.which == getKey("key_submit").key)
             {
                 if($( "#search_vehicle" ).val() != "")
                 {
@@ -448,12 +430,39 @@ function updateTable()
     });
 }
 
-function setKey(key,value)
-{
-    localStorage.setItem(key,JSON.stringify(value));
-}
+// - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// -
+// -             Key Functions
+// -
+// - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-function getKey(key)
-{
-    return JSON.parse(localStorage.getItem(key));
-}
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // -             set Key (call from button)
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    function setKey(key)
+    {
+        set_key_mode = "key_" + key;
+        $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
+        $( "#search_vehicle" ).focus();
+    }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // -             delete Key (call from button)
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    function delKey(key)
+    {
+        set_key_mode = false;
+        setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
+        $( "#search_vehicle" ).val("Die Taste '" + key + "' wurde gelöscht!");
+        window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
+    }
+
+    function setKeyStorage(key,value)
+    {
+        localStorage.setItem(key,JSON.stringify(value));
+    }
+
+    function getKeyStorage(key)
+    {
+        return JSON.parse(localStorage.getItem(key));
+    }
