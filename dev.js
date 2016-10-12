@@ -158,7 +158,7 @@ $(function(){
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // -             Key: Submit
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        if(!setKey_mode)
+        if(!set_key_mode)
         {
 
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
