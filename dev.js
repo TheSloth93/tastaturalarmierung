@@ -142,7 +142,7 @@ $(function(){
     // -
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
    
-    var set_key_mode = false;
+    
    
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // -             Update Table on Key Input
@@ -435,6 +435,8 @@ function updateTable()
 // -             Key Functions
 // -
 // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+var set_key_mode = false;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // -             set Key (call from button)
