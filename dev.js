@@ -82,18 +82,18 @@ html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-top: 12px; padding-bottom: 12px">';
-html = html + '      <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 0px" title="Einstellungen">';
+html = html + '      <a id="key_set_submit" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 0px" title="Taste zum Alarmieren belegen">';
+html = html + '         Alarmieren';
+html = html + '      </a>';
+html = html + '      <a id="key_set_fhz1" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Taste zum markieren des 1. Fahrzeugs belegen">';
 html = html + '         FHZ 1';
 html = html + '      </a>';
-html = html + '      <a id="key_set_fhz1" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Einstellungen">';
-html = html + '         FHZ 1';
-html = html + '      </a>';
-html = html + '      <a id="key_set_fhz2" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Einstellungen">';
+html = html + '      <a id="key_set_fhz2" href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0; margin-left: 6px" title="Taste zum markieren des 2. Fahrzeugs belegen">';
 html = html + '         FHZ 2';
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0047)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0057)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -356,6 +356,22 @@ $(function(){
 
                 $( "#search_vehicle" ).val(""); updateTable();
             }
+        }
+        else
+        {
+            // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+            // -
+            // -             Save pressed Key
+            // -
+            // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+            
+            console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
+            setKey(set_key_mode, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.key});
+
+            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
+            window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
+           
+            set_key_mode = false;
         }
 
     });
