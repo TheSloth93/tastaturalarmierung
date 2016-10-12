@@ -50,12 +50,12 @@ $(function(){
         if( $("#key_settings").css("display") == "none" )
         {
             $("#key_settings").css("display", "flex");
-            $("#key_settings_button").removeClass("btn-success").addClass("btn-warning");
+            $("#key_settings_button").removeClass("btn-success").addClass("btn-danger");
         }
         else
         {
             $("#key_settings").css("display", "none");
-            $("#key_settings_button").removeClass("btn-warning").addClass("btn-success");
+            $("#key_settings_button").removeClass("btn-danger").addClass("btn-success");
         }
     });
    
