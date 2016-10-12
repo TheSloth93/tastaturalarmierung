@@ -149,8 +149,16 @@ $(function(){
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         $( "#key_set_submit" ).on( "click", function()
         {
-            set_key_mode = "submit";
+            set_key_mode = "key_submit";
             $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
+            $( "#search_vehicle" ).focus();
+        });
+   
+        $( "#key_del_submit" ).on( "click", function()
+        {
+            set_key_mode = false;
+            setKey("key_submit", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
+            $( "#search_vehicle" ).val("Die Taste wurde gelöscht!").delay(1500).val("");
             $( "#search_vehicle" ).focus();
         });
    
