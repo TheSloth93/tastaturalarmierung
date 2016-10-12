@@ -6,7 +6,21 @@ if(typeof(jQuery) == 'undefined')
    throw new Error("LSS Tastaturalarmierung: missing jQuery");
 }
 
-$( "#mission-form" ).before('<div style="width: 100%; padding-bottom: 24px"><input class="string form-control" id="search_vehicle" size="50" type="text" style="margin-bottom: 6px"><font style="font-size: 12px">Tastaturalarmierung by ChaosKai93 (build 2016-10-10-0015)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a></div>');
+$( "#mission-form" ).before('
+    <div style="width: 100%; padding-bottom: 24px">
+      <div style="width: 100%; padding-bottom: 6px">
+         <h4>Tastaturalarmierung</h4>
+      </div>
+      <div style="width: 100%; padding-bottom: 6px">
+         <input class="string form-control" id="search_vehicle" size="50" type="text" style="margin-bottom: 6px">
+         <a href="#" class="btn btn-success navbar-btn btn-sm" title="Einstellungen">
+            <span class="glyphicon glyphicon-settings"></span>
+         </a>
+      </div>
+      <div style="width: 100%; padding-bottom: 6px">
+         <font style="font-size: 12px">by ChaosKai93 (build 2016-10-12-2140)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>
+      </div>
+    </div>');
 $( "#search_vehicle" ).focus();
 
 $(function(){
