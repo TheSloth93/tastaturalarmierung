@@ -373,6 +373,8 @@ $(function(){
             setKey(set_key_mode, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.key});
 
             $( "#search_vehicle" ).val("Die Taste wurde gespeichert!").delay(1500).val("");
+           
+            set_key_mode = false;
         }
     });
     
