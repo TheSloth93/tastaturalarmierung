@@ -117,7 +117,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0308)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0316)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -399,6 +399,8 @@ $(function(){
         {
             console.log(event.altKey,event.ctrlKey,event.metaKey,event.which)
             setKey("key_" + set_key_name, event.which);
+           
+            console.log("set key '" + set_key_name + "' to " + event.which);
 
             $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
             window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
@@ -472,10 +474,10 @@ function updateTable()
 
    function setKeyStorage(key,value)
    {
-       localStorage.setItem(key,JSON.stringify(value));
+       localStorage.setItem(key,value);
    }
 
    function getKeyStorage(key)
    {
-       return JSON.parse(localStorage.getItem(key));
+       return localStorage.getItem(key);
    }
