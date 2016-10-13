@@ -106,11 +106,18 @@ html = html + '                  <a href="#" class="btn btn-success navbar-btn b
 html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'delete'" + ')">Belegung löschen</a>';
 html = html + '               </td>';
 html = html + '            </tr>';
+html = html + '            <tr>';
+html = html + '               <td style="text-align: left"><font style="font-weight: 700">Alle markieren</font></td>';
+html = html + '               <td style="text-align: right">';
+html = html + '                  <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0" onclick="setKey(' + "'select_all'" + ')">Taste belegen</a>';
+html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'select_all'" + ')">Belegung löschen</a>';
+html = html + '               </td>';
+html = html + '            </tr>';
 html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0250)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0252)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
