@@ -1,3 +1,5 @@
+var set_key_mode = false;
+
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 // -             Check for jQuery
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -429,45 +431,43 @@ function updateTable()
 
     });
    
-   // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-   // -
-   // -             Key Functions
-   // -
-   // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-   var set_key_mode = false;
-
-       // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-       // -             set Key (call from button)
-       // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-       function setKey(key)
-       {
-           set_key_mode = "key_" + key;
-           $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
-           $( "#search_vehicle" ).focus();
-       }
-
-       // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-       // -             delete Key (call from button)
-       // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-       function delKey(key)
-       {
-           set_key_mode = false;
-           setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
-           $( "#search_vehicle" ).val("Die Taste '" + key + "' wurde gelöscht!");
-           window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
-       }
-
-       function setKeyStorage(key,value)
-       {
-           localStorage.setItem(key,JSON.stringify(value));
-       }
-
-       function getKeyStorage(key)
-       {
-           return JSON.parse(localStorage.getItem(key));
-       }
+   
     
 }
 
+// - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// -
+// -             Key Functions
+// -
+// - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   // -             set Key (call from button)
+   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   function setKey(key)
+   {
+       set_key_mode = "key_" + key;
+       $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
+       $( "#search_vehicle" ).focus();
+   }
+
+   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   // -             delete Key (call from button)
+   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   function delKey(key)
+   {
+       set_key_mode = false;
+       setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
+       $( "#search_vehicle" ).val("Die Taste '" + key + "' wurde gelöscht!");
+       window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
+   }
+
+   function setKeyStorage(key,value)
+   {
+       localStorage.setItem(key,JSON.stringify(value));
+   }
+
+   function getKeyStorage(key)
+   {
+       return JSON.parse(localStorage.getItem(key));
+   }
