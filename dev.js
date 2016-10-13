@@ -432,10 +432,10 @@ function updateTable()
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    // -             set Key (call from button)
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   function setKey(key_name)
+   function setKey(key)
    {
        set_key_mode = true;
-       set_key_name = key_name;
+       set_key_name = key;
        $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
        $( "#search_vehicle" ).focus();
    }
@@ -454,7 +454,7 @@ function updateTable()
    function setKeyStorage(key,value)
    {
        localStorage.setItem(key,value);
-       console.log("set key '" + key "' to '" + value + "'");
+       console.log("set key '" + key + "' to '" + value + "'");
    }
 
    function getKeyStorage(key)
