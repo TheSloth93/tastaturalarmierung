@@ -20,16 +20,19 @@ if(typeof(jQuery) == 'undefined')
 if (localStorage.getItem("key_submit") === null) {
     setKeyStorage("key_submit", 13);
 }
+showKeyCode("submit");
 
 // - - - - - Select All - - - - -
 if (localStorage.getItem("key_select_all") === null) {
     setKeyStorage("key_select_all", 106);
 }
+showKeyCode("key_select_all");
 
 // - - - - - Delete - - - - -
 if (localStorage.getItem("key_delete") === null) {
     setKeyStorage("key_delete", 8);
 }
+showKeyCode("delete");
 
 // - - - - - FHZ 1 - - - - -
 if (localStorage.getItem("key_fhz1") === null) {
@@ -92,8 +95,8 @@ html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div id="key_settings" style="width: 100%; display: none; flex-direction: column; padding-top: 12px; padding-bottom: 12px">';
-html = html + '      <div id="key_settings_console" style="width: 100%; padding-top: 12px; padding-bottom: 4px">';
-html = html + '         <font style=""> </font>';
+html = html + '      <div id="key_settings_console" style="width: 100%; min-height: 20px; margin-top: 12px; margin-bottom: 12px">';
+html = html + '         <font></font>';
 html = html + '      </div>';
 html = html + '      <table id="key_settings_table" class="table table-striped tablesorter tablesorter-default">';
 html = html + '         <tbody>';
