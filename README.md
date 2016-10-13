@@ -3,9 +3,10 @@ LSS Tastaturalarmierung ist eine Erweiterung für das Online Spiel "Leitstellens
 
 ### Features
 - Suche nach Fahrzeugen & Wachen im Alarmierungsfenster
-- Auswahl der Fahrzeuge im Alarmierungsfenster über die Tastatur (Tasten 1 - 9 über den Buchstaben)
+- Auswahl der Fahrzeuge im Alarmierungsfenster über die Tastatur
 - Schnelles markieren von Fahrzeugen durch Shortcuts (Suchen, Nummer drücken, weitersuchen, Enter zum Alarmieren)
-- Nach dem markieren eines Fahrzeugs kann sofort weiter gesucht werden (Die Eingabe wird automatisch nach dem markieren gelöscht)
+- Nach dem markieren eines Fahrzeugs kann sofort weiter gesucht werden
+- Alle Tasten können geändert werden
 
 ### Shortcuts
 - [Enter] Alarmierung senden
