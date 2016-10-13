@@ -110,7 +110,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0242)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0250)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -179,34 +179,27 @@ $(function(){
         }
         else
         {
-            console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
-           
-            if(event.which == getKeyStorage("key_submit").key)
-            {
-                console.log(event.key + " == " + getKeyStorage("key_submit").key);
-            }
-            
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
             // - - - - - Submit  - - - - -
             if(event.altKey == getKeyStorage("key_submit").altKey && event.ctrlKey == getKeyStorage("key_submit").ctrlKey && event.metaKey == getKeyStorage("key_submit").metaKey && event.which == getKeyStorage("key_submit").key)
             {
-                if($( "#search_vehicle" ).val() != "")
-                {
-                    $( table + ":visible" ).each(function() {
-                        $( this ).find("input").attr('checked', true);
-                    });
+                //if($( "#search_vehicle" ).val() != "")
+                //{
+                //    $( table + ":visible" ).each(function() {
+                //        $( this ).find("input").attr('checked', true);
+                //    });
 
-                    $( "#search_vehicle" ).val("");
-                }
-                else
-                {
+                //    $( "#search_vehicle" ).val("");
+                //}
+                //else
+                //{
                     $( "#mission-form" ).submit();
-                }
+                //}
             }
 
             // - - - - - Delete  - - - - -
-            if(event.which == 8)
+            if(event.altKey == getKeyStorage("key_delete").altKey && event.ctrlKey == getKeyStorage("key_delete").ctrlKey && event.metaKey == getKeyStorage("key_delete").metaKey && event.which == getKeyStorage("key_delete").key)
             {
                 $( "#search_vehicle" ).val(""); updateTable();
             }
