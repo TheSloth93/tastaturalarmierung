@@ -189,7 +189,7 @@ $(function(){
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
             // - - - - - Submit  - - - - -
-            if(event.altKey == getKeyStorage("key_submit").altKey && event.ctrlKey == getKeyStorage("key_submit").ctrlKey && event.metaKey == getKeyStorage("key_submit").metaKey && event.which == getKeyStorage("key_submit").key)
+            if(event.which == getKeyStorage("key_submit").key)
             {
                 //if($( "#search_vehicle" ).val() != "")
                 //{
