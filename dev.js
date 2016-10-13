@@ -377,7 +377,7 @@ $(function(){
         if(set_key_mode)
         {
             console.log(event.altKey,event.ctrlKey,event.metaKey,event.which)
-            setKey("key_" + set_key_name, event.which);
+            setKeyStorage("key_" + set_key_name, event.which);
            
             console.log("set key '" + set_key_name + "' to " + event.which);
 
@@ -454,6 +454,7 @@ function updateTable()
    function setKeyStorage(key,value)
    {
        localStorage.setItem(key,value);
+       console.log("set key '" + key "' to '" + value + "'");
    }
 
    function getKeyStorage(key)
