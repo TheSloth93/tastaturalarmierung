@@ -152,7 +152,7 @@ html = html + '</div>';
         // -             Create default if not exist
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         if (localStorage.getItem("key_" + key) === null) {
-            setKeyStorage(key, value.key);
+            setKeyStorage(key, value.default);
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -210,19 +210,19 @@ $(function(){
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
             // - - - - - Submit  - - - - -
-            if(event.which == getKeyStorage("key_submit"))
+            if(event.which == getKeyStorage("submit"))
             {
                 $( "#mission-form" ).submit();
             }
 
             // - - - - - Delete  - - - - -
-            if(event.which == getKeyStorage("key_delete"))
+            if(event.which == getKeyStorage("delete"))
             {
                 $( "#search_vehicle" ).val(""); updateTable();
             }
             
             // - - - - - Select all  - - - - -
-            if(event.which == getKeyStorage("key_select_all"))
+            if(event.which == getKeyStorage("select_all"))
             {
                 $( table + ":visible" ).each(function() {
                     $( this ).find("input").attr('checked', true);
@@ -232,7 +232,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 1  - - - - -
-            if(event.which == 49)
+            if(event.which == getKeyStorage("fhz1"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -242,7 +242,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 2  - - - - -
-            if(event.which == 50)
+            if(event.which == getKeyStorage("fhz2"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -250,7 +250,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 3  - - - - -
-            if(event.which == 51)
+            if(event.which == getKeyStorage("fhz3"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -258,7 +258,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 4  - - - - -
-            if(event.which == 52)
+            if(event.which == getKeyStorage("fhz4"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -266,7 +266,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 5  - - - - -
-            if(event.which == 53)
+            if(event.which == getKeyStorage("fhz5"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -274,7 +274,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 6  - - - - -
-            if(event.which == 54)
+            if(event.which == getKeyStorage("fhz6"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -282,7 +282,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 7  - - - - -
-            if(event.which == 55)
+            if(event.which == getKeyStorage("fhz7"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -290,7 +290,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 8  - - - - -
-            if(event.which == 56)
+            if(event.which == getKeyStorage("fhz8"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -298,7 +298,7 @@ $(function(){
             }
 
             // - - - - - Ergebnis 9  - - - - -
-            if(event.which == 57)
+            if(event.which == getKeyStorage("fhz9"))
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateTable();
@@ -369,7 +369,7 @@ function updateTable()
 
     function showKeyCode(key)
     {
-        $( "#" + key + "_key_code" ).text(keyCodeToChar[getKeyStorage("key_" + key)]);
+        $( "#" + key + "_key_code" ).text(keyCodeToChar[getKeyStorage(key)]);
     }
 
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -408,5 +408,5 @@ function updateTable()
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     function getKeyStorage(key)
     {
-        return localStorage.getItem(key);
+        return localStorage.getItem("key_" + key);
     }
