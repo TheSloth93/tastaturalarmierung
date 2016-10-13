@@ -1,4 +1,5 @@
 var set_key_mode = false;
+var set_key_name = "";
 
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 // -             Check for jQuery
@@ -109,7 +110,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0214)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0227)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -159,14 +160,26 @@ $(function(){
     // -
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
     
-    $( "#search_vehicle" ).on( "keyup", function( event ) {
+    $(document).on( "keyup", function( event )
         
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // -
         // -             Key: Submit
+        // -
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        if(set_key_mode == false)
+        if(set_key_mode)
+        {            
+            console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
+            setKey("key_" + set_key_name, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.key});
+
+            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
+            window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
+           
+            set_key_mode = false;
+        }
+        else
         {
-            console.log("key pressed: " + event.key);
+            console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
            
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
@@ -364,22 +377,6 @@ $(function(){
                 $( "#search_vehicle" ).val(""); updateTable();
             }
         }
-        else
-        {
-            // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-            // -
-            // -             Save pressed Key
-            // -
-            // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-            
-            console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
-            setKey(set_key_mode, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.key});
-
-            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
-            window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
-           
-            set_key_mode = false;
-        }
 
     });
     
@@ -390,7 +387,7 @@ $(function(){
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
     $(document).on( "keyup", function( event )
     {
-        if(set_key_mode != false)
+        if(set_key_mode)
         {
             console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
             setKey(set_key_mode, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.key});
@@ -447,7 +444,8 @@ function updateTable()
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    function setKey(key)
    {
-       set_key_mode = "key_" + key;
+       set_key_mode = true;
+       set_key_name = key;
        $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
        $( "#search_vehicle" ).focus();
    }
