@@ -174,35 +174,14 @@ $(function(){
         // -             Key: Submit
         // -
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        if(set_key_mode)
-        {            
-            console.log(event.altKey,event.ctrlKey,event.metaKey,event.which)
-            setKey("key_" + set_key_name, event.which);
-
-            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
-            window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
-           
-            set_key_mode = false;
-        }
-        else
+        if(!set_key_mode)
         {
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
             // - - - - - Submit  - - - - -
             if(event.which == getKeyStorage("key_submit"))
             {
-                //if($( "#search_vehicle" ).val() != "")
-                //{
-                //    $( table + ":visible" ).each(function() {
-                //        $( this ).find("input").attr('checked', true);
-                //    });
-
-                //    $( "#search_vehicle" ).val("");
-                //}
-                //else
-                //{
-                    $( "#mission-form" ).submit();
-                //}
+                $( "#mission-form" ).submit();
             }
 
             // - - - - - Delete  - - - - -
@@ -218,7 +197,7 @@ $(function(){
                     $( this ).find("input").attr('checked', true);
                 });
                 
-                $( "#search_vehicle" ).val("");
+                $( "#search_vehicle" ).val(""); updateTable();
             }
 
             // - - - - - Ergebnis 1  - - - - -
