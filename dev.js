@@ -117,7 +117,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0304)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0308)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -397,10 +397,11 @@ $(function(){
     {
         if(set_key_mode)
         {
-            console.log(event.altKey,event.ctrlKey,event.metaKey,event.key)
-            setKey(set_key_mode, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.key});
+            console.log(event.altKey,event.ctrlKey,event.metaKey,event.which)
+            setKey("key_" + set_key_name, event.which);
 
-            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!").delay(1500).val("");
+            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
+            window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
            
             set_key_mode = false;
         }
