@@ -432,10 +432,10 @@ function updateTable()
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    // -             set Key (call from button)
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   function setKey(key)
+   function setKey(key_name)
    {
        set_key_mode = true;
-       set_key_name = key;
+       set_key_name = key_name;
        $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
        $( "#search_vehicle" ).focus();
    }
