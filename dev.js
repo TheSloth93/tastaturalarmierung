@@ -1,6 +1,8 @@
 var set_key_mode = false;
 var set_key_name = "";
 
+keyCodeToChar = {8:"Backspace",9:"Tab",13:"Enter",16:"Shift",17:"Ctrl",18:"Alt",19:"Pause/Break",20:"Caps Lock",27:"Esc",32:"Space",33:"Page Up",34:"Page Down",35:"End",36:"Home",37:"Left",38:"Up",39:"Right",40:"Down",45:"Insert",46:"Delete",48:"0",49:"1",50:"2",51:"3",52:"4",53:"5",54:"6",55:"7",56:"8",57:"9",65:"A",66:"B",67:"C",68:"D",69:"E",70:"F",71:"G",72:"H",73:"I",74:"J",75:"K",76:"L",77:"M",78:"N",79:"O",80:"P",81:"Q",82:"R",83:"S",84:"T",85:"U",86:"V",87:"W",88:"X",89:"Y",90:"Z",91:"Windows",93:"Right Click",96:"Numpad 0",97:"Numpad 1",98:"Numpad 2",99:"Numpad 3",100:"Numpad 4",101:"Numpad 5",102:"Numpad 6",103:"Numpad 7",104:"Numpad 8",105:"Numpad 9",106:"Numpad *",107:"Numpad +",109:"Numpad -",110:"Numpad .",111:"Numpad /",112:"F1",113:"F2",114:"F3",115:"F4",116:"F5",117:"F6",118:"F7",119:"F8",120:"F9",121:"F10",122:"F11",123:"F12",144:"Num Lock",145:"Scroll Lock",182:"My Computer",183:"My Calculator",186:";",187:"=",188:",",189:"-",190:".",191:"/",192:"`",219:"[",220:"\\",221:"]",222:"'"};
+
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 // -             Check for jQuery
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -90,10 +92,14 @@ html = html + '         <span class="glyphicon glyphicon-cog" style="font-size: 
 html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div id="key_settings" style="width: 100%; display: none; padding-top: 12px; padding-bottom: 12px">';
+html = html + '      <div id="key_settings_console" style="width: 100%; padding-top: 12px; padding-bottom: 4px">';
+html = html + '         <font style=""></font>';
+html = html + '      </div>';
 html = html + '      <table id="key_settings_table" class="table table-striped tablesorter tablesorter-default">';
 html = html + '         <tbody>';
 html = html + '            <tr>';
 html = html + '               <td style="text-align: left"><font style="font-weight: 700">Alarmieren</font></td>';
+html = html + '               <td style="text-align: left"><font id="submit_key_code"></font></td>';
 html = html + '               <td style="text-align: right">';
 html = html + '                  <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0" onclick="setKey(' + "'submit'" + ')">Taste belegen</a>';
 html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'submit'" + ')">Belegung löschen</a>';
@@ -101,6 +107,7 @@ html = html + '               </td>';
 html = html + '            </tr>';
 html = html + '            <tr>';
 html = html + '               <td style="text-align: left"><font style="font-weight: 700">Eingabe löschen</font></td>';
+html = html + '               <td style="text-align: left"><font id="delete_key_code"></font></td>';
 html = html + '               <td style="text-align: right">';
 html = html + '                  <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0" onclick="setKey(' + "'delete'" + ')">Taste belegen</a>';
 html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'delete'" + ')">Belegung löschen</a>';
@@ -108,6 +115,7 @@ html = html + '               </td>';
 html = html + '            </tr>';
 html = html + '            <tr>';
 html = html + '               <td style="text-align: left"><font style="font-weight: 700">Alle markieren</font></td>';
+html = html + '               <td style="text-align: left"><font id="select_all_key_code"></font></td>';
 html = html + '               <td style="text-align: right">';
 html = html + '                  <a href="#" class="btn btn-success navbar-btn btn-sm" style="margin: 0" onclick="setKey(' + "'select_all'" + ')">Taste belegen</a>';
 html = html + '                  <a href="#" class="btn btn-danger navbar-btn btn-sm" style="margin: 0" onclick="delKey(' + "'select_all'" + ')">Belegung löschen</a>';
@@ -117,7 +125,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0316)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-1306)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -429,6 +437,11 @@ function updateTable()
 // -
 // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+    function showKeyCode(key)
+    {
+        $( "#" + key + "_key_code" ).html(keyCodeToChar[getKeyStorage(key)]);
+    }
+
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    // -             set Key (call from button)
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -436,28 +449,35 @@ function updateTable()
    {
        set_key_mode = true;
        set_key_name = key;
-       $( "#search_vehicle" ).val("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
+       $( "#key_settings.console" ).find("font").html("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
        $( "#search_vehicle" ).focus();
    }
 
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    // -             delete Key (call from button)
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   function delKey(key)
-   {
-       set_key_mode = false;
-       setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
-       $( "#search_vehicle" ).val("Die Taste '" + key + "' wurde gelöscht!");
-       window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
-   }
+    function delKey(key)
+    {
+        set_key_mode = false;
+        setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
+        $( "#key_settings.console" ).find("font").html("Die Taste '" + key + "' wurde gelöscht!");
+        window.setTimeout(function() { $( "#key_settings.console" ).find("font").html("") }, 1500);
+    }
 
-   function setKeyStorage(key,value)
-   {
-       localStorage.setItem(key,value);
-       console.log("set key '" + key + "' to '" + value + "'");
-   }
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // -             Save Key to Storage
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    function setKeyStorage(key,value)
+    {
+        localStorage.setItem(key,value);
+        console.log("set key '" + key + "' to '" + value + "'");
+        showKeyCode(key);
+    }
 
-   function getKeyStorage(key)
-   {
-       return localStorage.getItem(key);
-   }
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // -             Get Key from Storage
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    function getKeyStorage(key)
+    {
+        return localStorage.getItem(key);
+    }
