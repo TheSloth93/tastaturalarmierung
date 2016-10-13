@@ -93,7 +93,7 @@ html = html + '      </a>';
 html = html + '   </div>';
 html = html + '   <div id="key_settings" style="width: 100%; display: none; flex-direction: column; padding-top: 12px; padding-bottom: 12px">';
 html = html + '      <div id="key_settings_console" style="width: 100%; padding-top: 12px; padding-bottom: 4px">';
-html = html + '         <font style=""></font>';
+html = html + '         <font style=""> </font>';
 html = html + '      </div>';
 html = html + '      <table id="key_settings_table" class="table table-striped tablesorter tablesorter-default">';
 html = html + '         <tbody>';
@@ -125,7 +125,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-1317)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-2335)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -212,164 +212,74 @@ $(function(){
             if(event.which == 49)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
                 $( table + ":visible" ).eq(0).find("input").click();
 
-                $( "#search_vehicle" ).val(""); updateTable();
+                //$( "#search_vehicle" ).val(""); updateTable();
             }
 
             // - - - - - Ergebnis 2  - - - - -
             if(event.which == 50)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(1).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(1).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(1).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(1).find("input").click();
             }
 
             // - - - - - Ergebnis 3  - - - - -
             if(event.which == 51)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(2).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(2).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(2).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(2).find("input").click();
             }
 
             // - - - - - Ergebnis 4  - - - - -
             if(event.which == 52)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(3).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(3).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(3).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(3).find("input").click();
             }
 
             // - - - - - Ergebnis 5  - - - - -
             if(event.which == 53)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(4).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(4).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(4).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(4).find("input").click();
             }
 
             // - - - - - Ergebnis 6  - - - - -
             if(event.which == 54)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(5).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(5).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(5).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(5).find("input").click();
             }
 
             // - - - - - Ergebnis 7  - - - - -
             if(event.which == 55)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(6).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(6).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(6).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(6).find("input").click();
             }
 
             // - - - - - Ergebnis 8  - - - - -
             if(event.which == 56)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(7).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(7).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(7).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(7).find("input").click();
             }
 
             // - - - - - Ergebnis 9  - - - - -
             if(event.which == 57)
             {
                 $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
-
                 updateTable();
-
-                if($( table + ":visible" ).eq(8).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(8).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(8).find("input").prop('checked', true);
-                }
-
-                $( "#search_vehicle" ).val(""); updateTable();
+                $( table + ":visible" ).eq(8).find("input").click();
             }
         }
 
@@ -377,7 +287,7 @@ $(function(){
     
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
     // -
-    // -             Key Action
+    // -             Save pressed Key
     // -
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
     $(document).on( "keyup", function( event )
@@ -389,8 +299,8 @@ $(function(){
            
             console.log("set key '" + set_key_name + "' to " + event.which);
 
-            $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
-            window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
+            $( "#key_settings_console" ).find("font").text("Die Taste wurde gespeichert!");
+            window.setTimeout(function() { $( "#key_settings_console" ).find("font").text("") }, 1500);
            
             set_key_mode = false;
         }
