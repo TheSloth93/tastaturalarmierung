@@ -125,7 +125,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-1310)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-1317)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -439,7 +439,7 @@ function updateTable()
 
     function showKeyCode(key)
     {
-        $( "#" + key + "_key_code" ).text(keyCodeToChar[getKeyStorage(key)]);
+        $( "#" + key + "_key_code" ).text(keyCodeToChar[getKeyStorage("key_" + key)]);
     }
 
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -449,7 +449,7 @@ function updateTable()
    {
        set_key_mode = true;
        set_key_name = key;
-       $( "#key_settings.console" ).find("font").text("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
+       $( "#key_settings_console" ).find("font").text("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
        $( "#search_vehicle" ).focus();
    }
 
@@ -460,8 +460,8 @@ function updateTable()
     {
         set_key_mode = false;
         setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
-        $( "#key_settings.console" ).find("font").text("Die Taste '" + key + "' wurde gelöscht!");
-        window.setTimeout(function() { $( "#key_settings.console" ).find("font").text("") }, 1500);
+        $( "#key_settings_console" ).find("font").text("Die Taste '" + key + "' wurde gelöscht!");
+        window.setTimeout(function() { $( "#key_settings_console" ).find("font").text("") }, 1500);
     }
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
