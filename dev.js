@@ -16,62 +16,62 @@ if(typeof(jQuery) == 'undefined')
 
 // - - - - - Submit - - - - -
 if (localStorage.getItem("key_submit") === null) {
-    setKeyStorage("key_submit", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':13});
+    setKeyStorage("key_submit", 13);
 }
 
 // - - - - - Select All - - - - -
 if (localStorage.getItem("key_select_all") === null) {
-    setKeyStorage("key_submit", {'altKey':false,'ctrlKey':true,'metaKey':false,'key':13});
+    setKeyStorage("key_select_all", 106);
 }
 
 // - - - - - Delete - - - - -
 if (localStorage.getItem("key_delete") === null) {
-    setKeyStorage("key_delete", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':8});
+    setKeyStorage("key_delete", 8);
 }
 
 // - - - - - FHZ 1 - - - - -
 if (localStorage.getItem("key_fhz1") === null) {
-    setKeyStorage("key_fhz1", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':49});
+    setKeyStorage("key_fhz1", 49);
 }
 
 // - - - - - FHZ 2 - - - - -
 if (localStorage.getItem("key_fhz2") === null) {
-    setKeyStorage("key_fhz2", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':50});
+    setKeyStorage("key_fhz2", 50);
 }
 
 // - - - - - FHZ 3 - - - - -
 if (localStorage.getItem("key_fhz3") === null) {
-    setKeyStorage("key_fhz3", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':51});
+    setKeyStorage("key_fhz3", 51);
 }
 
 // - - - - - FHZ 4 - - - - -
 if (localStorage.getItem("key_fhz4") === null) {
-    setKeyStorage("key_fhz4", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':52});
+    setKeyStorage("key_fhz4", 52);
 }
 
 // - - - - - FHZ 5 - - - - -
 if (localStorage.getItem("key_fhz5") === null) {
-    setKeyStorage("key_fhz5", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':53});
+    setKeyStorage("key_fhz5", 53);
 }
 
 // - - - - - FHZ 6 - - - - -
 if (localStorage.getItem("key_fhz6") === null) {
-    setKeyStorage("key_fhz6", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':54});
+    setKeyStorage("key_fhz6", 54);
 }
 
 // - - - - - FHZ 7 - - - - -
 if (localStorage.getItem("key_fhz7") === null) {
-    setKeyStorage("key_fhz7", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':55});
+    setKeyStorage("key_fhz7", 55);
 }
 
 // - - - - - FHZ 8 - - - - -
 if (localStorage.getItem("key_fhz8") === null) {
-    setKeyStorage("key_fhz8", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':56});
+    setKeyStorage("key_fhz8", 56);
 }
 
 // - - - - - FHZ 9 - - - - -
 if (localStorage.getItem("key_fhz9") === null) {
-    setKeyStorage("key_fhz9", {'altKey':false,'ctrlKey':false,'metaKey':false,'key':57});
+    setKeyStorage("key_fhz9", 57);
 }
 
 // - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -117,7 +117,7 @@ html = html + '         </tbody>';
 html = html + '      </table>';
 html = html + '   </div>';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
-html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0252)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+html = html + '      <font style="font-size: 12px">by ChaosKai93 (build 2016-10-13-0304)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
 html = html + '   </div>';
 html = html + '</div>';
 
@@ -177,7 +177,7 @@ $(function(){
         if(set_key_mode)
         {            
             console.log(event.altKey,event.ctrlKey,event.metaKey,event.which)
-            setKey("key_" + set_key_name, {'altKey':event.altKey,'ctrlKey':event.ctrlKey,'metaKey':event.metaKey,'key':event.which});
+            setKey("key_" + set_key_name, event.which);
 
             $( "#search_vehicle" ).val("Die Taste wurde gespeichert!");
             window.setTimeout(function() { $('#search_vehicle').val("") }, 1500);
@@ -189,7 +189,7 @@ $(function(){
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
 
             // - - - - - Submit  - - - - -
-            if(event.which == getKeyStorage("key_submit").key)
+            if(event.which == getKeyStorage("key_submit"))
             {
                 //if($( "#search_vehicle" ).val() != "")
                 //{
@@ -206,9 +206,19 @@ $(function(){
             }
 
             // - - - - - Delete  - - - - -
-            if(event.altKey == getKeyStorage("key_delete").altKey && event.ctrlKey == getKeyStorage("key_delete").ctrlKey && event.metaKey == getKeyStorage("key_delete").metaKey && event.which == getKeyStorage("key_delete").key)
+            if(event.which == getKeyStorage("key_delete"))
             {
                 $( "#search_vehicle" ).val(""); updateTable();
+            }
+            
+            // - - - - - Select all  - - - - -
+            if(event.which == getKeyStorage("key_select_all"))
+            {
+                $( table + ":visible" ).each(function() {
+                    $( this ).find("input").attr('checked', true);
+                });
+                
+                $( "#search_vehicle" ).val("");
             }
 
             // - - - - - Ergebnis 1  - - - - -
@@ -218,14 +228,7 @@ $(function(){
 
                 updateTable();
 
-                if($( table + ":visible" ).eq(0).find("input").prop('checked') == "checked")
-                {
-                    $( table + ":visible" ).eq(0).find("input").prop('checked', false);
-                }
-                else
-                {
-                    $( table + ":visible" ).eq(0).find("input").prop('checked', true);
-                }
+                $( table + ":visible" ).eq(0).find("input").click();
 
                 $( "#search_vehicle" ).val(""); updateTable();
             }
