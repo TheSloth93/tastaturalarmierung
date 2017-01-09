@@ -30,7 +30,7 @@ Um das Script im Leitstellenspiel auszuführen, benötigst du ein passendes Plug
 > [Violent-Monkey](https://addons.opera.com/de/extensions/details/violent-monkey/?display=de)
 
 ##### Das Script:
-> https://github.com/ChaosKai/tastaturalarmierung/raw/master/user.js
+> https://github.com/ChaosKai/tastaturalarmierung/raw/master/tastaturalarmierung.user.js
 
 ### Changelog
 > **2016-10-14-0054**
