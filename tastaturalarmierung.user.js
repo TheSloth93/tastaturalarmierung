@@ -9,5 +9,5 @@
 
 var scriptElement = document.createElement("script");
 scriptElement.type = "text/javascript";
-scriptElement.src = "https://rawgit.com/ChaosKai/tastaturalarmierung/master/dev.js";
+scriptElement.src = "https://rawgit.com/ChaosKai/tastaturalarmierung/master/tastaturalarmierung.dev.js";
 document.body.appendChild(scriptElement);
