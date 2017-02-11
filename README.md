@@ -33,6 +33,11 @@ Um das Script im Leitstellenspiel auszuführen, benötigst du ein passendes Plug
 > https://github.com/ChaosKai/tastaturalarmierung/raw/master/tastaturalarmierung.user.js
 
 ### Changelog
+> **2017-02-12-0025**
+> - Unterstützung für Strg, Alt und Shift
+> - Neue Funktion: Mehr Fahrzeuge und Weniger Fahrzeuge markieren ( **+** & **-** )
+> - Neue Benutzeroberfläche zum ändern der Tastenbelegung
+
 > **2016-10-14-0054**
 > - Optionale Belegung der Tasten
 
