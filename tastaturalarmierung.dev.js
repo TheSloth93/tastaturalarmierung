@@ -175,12 +175,13 @@ $(function(){
     {
         if( $("#key_settings").css("display") == "none" )
         {
-            $("#key_settings").css("display", "flex");
+            $("#key_settings").slideDown(200).delay(200).css("display", "flex");
             $("#key_settings_button").removeClass("btn-success").addClass("btn-danger");
         }
         else
         {
-            $("#key_settings").css("display", "none");
+            //$("#key_settings").css("display", "none");
+            $("#key_settings").slideUp(150);
             $("#key_settings_button").removeClass("btn-danger").addClass("btn-success");
         }
     });
