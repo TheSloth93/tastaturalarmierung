@@ -94,7 +94,7 @@ if(typeof(jQuery) == 'undefined')
 // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 var html = '';
-html = html + '<div style="width: 100%; padding-bottom: 24px">';
+html = html + '<div style="width: 100%; padding-bottom: 16px">';
 html = html + '   <div style="width: 100%; padding-bottom: 6px">';
 html = html + '      <h4>Tastaturalarmierung</h4>';
 html = html + '   </div>';
@@ -109,6 +109,9 @@ html = html + '      <div id="key_settings_console" style="width: 100%; min-heig
 html = html + '         <font></font>';
 html = html + '      </div>';
 html = html + '      <table id="key_settings_table" class="table table-striped tablesorter tablesorter-default">';
+html = html + '         <div style="width: 100%; padding-bottom: 6px">';
+html = html + '             <h4>Tastaturbelegung</h4>';
+html = html + '         </div>';
 html = html + '         <tbody>';
 
 html = html + '         </tbody>';
