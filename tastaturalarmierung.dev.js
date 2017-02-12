@@ -345,7 +345,7 @@
             main = main + '      </table>';
             main = main + '   </div>';
             main = main + '   <div style="width: 100%; padding-bottom: 6px">';
-            main = main + '      <font style="font-size: 12px">by ChaosKai93 (build 2017-02-12-0025)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+            main = main + '      <font style="font-size: 12px">by ChaosKai93 (build 2017-02-12-0135)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
             main = main + '   </div>';
             main = main + '</div>';
 
@@ -439,7 +439,7 @@ $(function(){
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // -             Update Table on Key Input
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    $( "#search_vehicle" ).on( "input", function() {
+    $( document ).on( "input", function() {
         updateVehicleTable();
     });
     
