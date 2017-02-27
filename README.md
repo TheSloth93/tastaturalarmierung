@@ -10,8 +10,8 @@ LSS Tastaturalarmierung ist eine Erweiterung für das Online Spiel "Leitstellens
 
 ### Shortcuts
 - [Enter] Alarmierung senden
-- [Backspace] Leert das Eingabefeld
-- [Numpad *] Markiert alle sichtbaren Fahrzeuge
+- [Entf] Leert das Eingabefeld
+- [+] und [-] Markiert mehr oder weniger Fahrzeuge in der Liste
 - [1 - 9] Markiert das **X** sichtbare Fahrzeuge in der Liste
 
 ### Installation
@@ -33,6 +33,11 @@ Um das Script im Leitstellenspiel auszuführen, benötigst du ein passendes Plug
 > https://github.com/ChaosKai/tastaturalarmierung/raw/master/tastaturalarmierung.user.js
 
 ### Changelog
+> **2017-02-27-0139**
+> - Optische Änderungen
+> - Textfeld gegen direkte Eingabe auf der Seite getauscht
+> - Änderung der Standart-Tastenbelegung
+
 > **2017-02-12-0025**
 > - Unterstützung für Strg, Alt und Shift
 > - Neue Funktion: Mehr Fahrzeuge und Weniger Fahrzeuge markieren ( **+** & **-** )
