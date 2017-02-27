@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name        LSS Tastaturalarmierung
+// @namespace   Leitstellenspiel
+// @include     http*://www.leitstellenspiel.de/*
+// @version     dev
+// @author      ChaosKai93
+// @grant       none
+// ==/UserScript==
+
+window.gmScripts_GlobalVar = 'search_query';
 
 // # ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
 // #
@@ -6,6 +16,8 @@
 // #
 // #
 // # ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+
+        var search_query = "";
 
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
     // -
@@ -27,106 +39,496 @@
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
         keyCodeToChar = {  
-            8:"Backspace",
-            9:"Tab",
-            13:"Enter",
-            16:"Shift",
-            17:"Ctrl",
-            18:"Alt",
-            19:"Pause/Break",
-            20:"Caps Lock",
-            27:"Esc",
-            32:"Space",
-            33:"Page Up",
-            34:"Page Down",
-            35:"End",
-            36:"Home",
-            37:"Left",
-            38:"Up",
-            39:"Right",
-            40:"Down",
-            45:"Insert",
-            46:"Delete",
-            48:"0",
-            49:"1",
-            50:"2",
-            51:"3",
-            52:"4",
-            53:"5",
-            54:"6",
-            55:"7",
-            56:"8",
-            57:"9",
-            65:"A",
-            66:"B",
-            67:"C",
-            68:"D",
-            69:"E",
-            70:"F",
-            71:"G",
-            72:"H",
-            73:"I",
-            74:"J",
-            75:"K",
-            76:"L",
-            77:"M",
-            78:"N",
-            79:"O",
-            80:"P",
-            81:"Q",
-            82:"R",
-            83:"S",
-            84:"T",
-            85:"U",
-            86:"V",
-            87:"W",
-            88:"X",
-            89:"Y",
-            90:"Z",
-            91:"Windows",
-            93:"Right Click",
-            96:"Numpad 0",
-            97:"Numpad 1",
-            98:"Numpad 2",
-            99:"Numpad 3",
-            100:"Numpad 4",
-            101:"Numpad 5",
-            102:"Numpad 6",
-            103:"Numpad 7",
-            104:"Numpad 8",
-            105:"Numpad 9",
-            106:"Numpad *",
-            107:"Numpad +",
-            109:"Numpad -",
-            110:"Numpad .",
-            111:"Numpad /",
-            112:"F1",
-            113:"F2",
-            114:"F3",
-            115:"F4",
-            116:"F5",
-            117:"F6",
-            118:"F7",
-            119:"F8",
-            120:"F9",
-            121:"F10",
-            122:"F11",
-            123:"F12",
-            144:"Num Lock",
-            145:"Scroll Lock",
-            182:"My Computer",
-            183:"My Calculator",
-            186:";",
-            187:"=",
-            188:",",
-            189:"-",
-            190:".",
-            191:"/",
-            192:"`",
-            219:"[",
-            220:"\\",
-            221:"]",
-            222:"'"
+            8:
+            {
+                name:"Backspace",
+                key:""
+            },
+            9:
+            {
+                name:"Tab",
+                key:" "
+            },
+            13:
+            {
+                name:"Enter",
+                key:""
+            },
+            16:
+            {
+                name:"Shift",
+                key:""
+            },
+            17:
+            {
+                name:"Strg",
+                key:""
+            },
+            18:
+            {
+                name:"Alt",
+                key:""
+            },
+            19:
+            {
+                name:"Pause / Break",
+                key:""
+            },
+            20:
+            {
+                name:"Caps Lock",
+                key:""
+            },
+            27:
+            {
+                name:"Esc",
+                key:""
+            },
+            32:
+            {
+                name:"Leerzeichen",
+                key:" "
+            },
+            33:
+            {
+                name:"Bild auf",
+                key:""
+            },
+            34:
+            {
+                name:"Bild ab",
+                key:""
+            },
+            35:
+            {
+                name:"Ende",
+                key:""
+            },
+            36:
+            {
+                name:"Home",
+                key:""
+            },
+            37:
+            {
+                name:"Links",
+                key:""
+            },
+            38:
+            {
+                name:"Auf",
+                key:""
+            },
+            39:
+            {
+                name:"Rechts",
+                key:""
+            },
+            40:
+            {
+                name:"Ab",
+                key:""
+            },
+            45:
+            {
+                name:"Einfg",
+                key:""
+            },
+            46:
+            {
+                name:"Entf",
+                key:""
+            },
+            48:
+            {
+                name:"0",
+                key:"0"
+            },
+            49:
+            {
+                name:"1",
+                key:"1"
+            },
+            50:
+            {
+                name:"2",
+                key:"2"
+            },
+            51:
+            {
+                name:"3",
+                key:"3"
+            },
+            52:
+            {
+                name:"4",
+                key:"4"
+            },
+            53:
+            {
+                name:"5",
+                key:"5"
+            },
+            54:
+            {
+                name:"6",
+                key:"6"
+            },
+            55:
+            {
+                name:"7",
+                key:"7"
+            },
+            56:
+            {
+                name:"8",
+                key:"8"
+            },
+            57:
+            {
+                name:"9",
+                key:"9"
+            },
+            65:
+            {
+                name:"A",
+                key:"A"
+            },
+            66:
+            {
+                name:"B",
+                key:"B"
+            },
+            67:
+            {
+                name:"C",
+                key:"C"
+            },
+            68:
+            {
+                name:"D",
+                key:"D"
+            },
+            69:
+            {
+                name:"E",
+                key:"E"
+            },
+            70:
+            {
+                name:"F",
+                key:"F"
+            },
+            71:
+            {
+                name:"G",
+                key:"G"
+            },
+            72:
+            {
+                name:"H",
+                key:"H"
+            },
+            73:
+            {
+                name:"I",
+                key:"I"
+            },
+            74:
+            {
+                name:"J",
+                key:"J"
+            },
+            75:
+            {
+                name:"K",
+                key:"K"
+            },
+            76:
+            {
+                name:"L",
+                key:"L"
+            },
+            77:
+            {
+                name:"M",
+                key:"M"
+            },
+            78:
+            {
+                name: "N",
+                key:  "N"
+            },
+            79:
+            {
+                name: "O",
+                key:  "O"
+            },
+            80:
+            {
+                name: "P",
+                key:  "P"
+            },
+            81:
+            {
+                name: "Q",
+                key:  "Q"
+            },
+            82:
+            {
+                name: "R",
+                key:  "R"
+            },
+            83:
+            {
+                name: "S",
+                key:  "S"
+            },
+            84:
+            {
+                name: "T",
+                key:  "T"
+            },
+            85:
+            {
+                name: "U",
+                key:  "U"
+            },
+            86:
+            {
+                name: "V",
+                key:  "V"
+            },
+            87:
+            {
+                name: "W",
+                key:  "W"
+            },
+            88:
+            {
+                name: "X",
+                key:  "X"
+            },
+            89:
+            {
+                name: "Y",
+                key:  "Y"
+            },
+            90:
+            {
+                name: "Z",
+                key:  "Z"
+            },
+            91:
+            {
+                name: "Windows",
+                key:  ""
+            },
+            93:
+            {
+                name: "Rechts Klick",
+                key:  ""
+            },
+            96:
+            {
+                name: "Numpad 0",
+                key:  "0"
+            },
+            97:
+            {
+                name: "Numpad 1",
+                key:  "1"
+            },
+            98:
+            {
+                name: "Numpad 2",
+                key:  "2"
+            },
+            99:
+            {
+                name: "Numpad 3",
+                key:  "3"
+            },
+            100:
+            {
+                name: "Numpad 4",
+                key:  "4"
+            },
+            101:
+            {
+                name: "Numpad 5",
+                key:  "5"
+            },
+            102:
+            {
+                name: "Numpad 6",
+                key:  "6"
+            },
+            103:
+            {
+                name: "Numpad 7",
+                key:  "7"
+            },
+            104:
+            {
+                name: "Numpad 8",
+                key:  "8"
+            },
+            105:
+            {
+                name: "Numpad 9",
+                key:  "9"
+            },
+            106:
+            {
+                name: "Numpad *",
+                key:  "*"
+            },
+            107:
+            {
+                name: "Numpad +",
+                key:  "+"
+            },
+            109:
+            {
+                name: "Numpad -",
+                key:  "-"
+            },
+            110:
+            {
+                name: "Numpad .",
+                key:  "."
+            },
+            111:
+            {
+                name: "Numpad /",
+                key:  "/"
+            },
+            112:
+            {
+                name: "F1",
+                key:  ""
+            },
+            113:
+            {
+                name: "F2",
+                key:  ""
+            },
+            114:
+            {
+                name: "F3",
+                key:  ""
+            },
+            115:
+            {
+                name: "F4",
+                key:  ""
+            },
+            116:
+            {
+                name: "F5",
+                key:  ""
+            },
+            117:
+            {
+                name: "F6",
+                key:  ""
+            },
+            118:
+            {
+                name: "F7",
+                key:  ""
+            },
+            119:
+            {
+                name: "F8",
+                key:  ""
+            },
+            120:
+            {
+                name: "F9",
+                key:  ""
+            },
+            121:
+            {
+                name: "F10",
+                key:  ""
+            },
+            122:
+            {
+                name: "F11",
+                key:  ""
+            },
+            123:
+            {
+                name: "F12",
+                key:  ""
+            },
+            144:
+            {
+                name: "Num Lock",
+                key:  ""
+            },
+            145:
+            {
+                name: "Scroll Lock",
+                key:  ""
+            },
+            186:
+            {
+                name: ";",
+                key:  ";"
+            },
+            187:
+            {
+                name: "=",
+                key:  "="
+            },
+            188:
+            {
+                name: ",",
+                key:  ","
+            },
+            189:
+            {
+                name: "-",
+                key:  "-"
+            },
+            190:
+            {
+                name: ".",
+                key:  "."
+            },
+            191:
+            {
+                name: "/",
+                key:  "/"
+            },
+            192:
+            {
+                name: "`",
+                key:  "`"
+            },
+            219:
+            {
+                name: "[",
+                key:  "["
+            },
+            220:
+            {
+                name: "\\",
+                key:  "\\"
+            },
+            221:
+            {
+                name: "]",
+                key:  "]"
+            },
+            222:
+            {
+                name: "'",
+                key:  "'"
+            }
         };
 
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -149,7 +551,7 @@
             {
                 "name":         "Suchfeld leeren",
                 "description":  "Das Eingabefeld zur Suche leeren",
-                "key":          8,
+                "key":          46,
                 "ctrl":         false,
                 "alt":          false,
                 "shift":        false
@@ -176,7 +578,7 @@
             {
                 "name":         "Alle markieren",
                 "description":  "Alle sichtbaren Fahrzeuge markieren",
-                "key":          106,
+                "key":          false,
                 "ctrl":         false,
                 "alt":          false,
                 "shift":        false
@@ -186,7 +588,7 @@
                 "name":         "Fahrzeug 1 markieren",
                 "description":  "Das 1. sichtbare Fahrzeug markieren",
                 "key":          49,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -195,7 +597,7 @@
                 "name":         "Fahrzeug 2 markieren",
                 "description":  "Das 2. sichtbare Fahrzeug markieren",
                 "key":          50,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -204,7 +606,7 @@
                 "name":         "Fahrzeug 3 markieren",
                 "description":  "Das 3. sichtbare Fahrzeug markieren",
                 "key":          51,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -213,7 +615,7 @@
                 "name":         "Fahrzeug 4 markieren",
                 "description":  "Das 4. sichtbare Fahrzeug markieren",
                 "key":          52,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -222,7 +624,7 @@
                 "name":         "Fahrzeug 5 markieren",
                 "description":  "Das 5. sichtbare Fahrzeug markieren",
                 "key":          53,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -231,7 +633,7 @@
                 "name":         "Fahrzeug 6 markieren",
                 "description":  "Das 6. sichtbare Fahrzeug markieren",
                 "key":          54,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -240,7 +642,7 @@
                 "name":         "Fahrzeug 7 markieren",
                 "description":  "Das 7. sichtbare Fahrzeug markieren",
                 "key":          55,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -249,7 +651,7 @@
                 "name":         "Fahrzeug 8 markieren",
                 "description":  "Das 8. sichtbare Fahrzeug markieren",
                 "key":          56,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             },
@@ -258,7 +660,7 @@
                 "name":         "Fahrzeug 9 markieren",
                 "description":  "Das 9. sichtbare Fahrzeug markieren",
                 "key":          57,
-                "ctrl":         true,
+                "ctrl":         false,
                 "alt":          false,
                 "shift":        false
             }
@@ -273,6 +675,11 @@
         if(typeof(jQuery) == 'undefined')
         {
            throw new Error("LSS Tastaturalarmierung: missing jQuery");
+        }
+
+        if(window.location.href.indexOf("missions/") == -1)
+        {
+           return;
         }
 
 
@@ -321,31 +728,33 @@
             // -             Generate HTML
             // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
             var main = '';
-            main = main + '<div id="keyboard_alert_main" style="width: 100%; padding-bottom: 16px">';
-            main = main + '   <div style="width: 100%; padding-bottom: 6px">';
-            main = main + '      <h4>Tastaturalarmierung</h4>';
-            main = main + '   </div>';
-            main = main + '   <div style="width: 100%; display: flex; padding-bottom: 6px">';
-            main = main + '      <input class="string form-control" id="search_vehicle" size="50" type="text">';
+            main = main + '<div id="keyboard_alert_main" style="width: 100%; padding: 0px; margin-bottom: 16px; border: 1px solid #bdbdbd; border-radius: 4px; overflow: hidden">';
+            main = main + '   <div style="width: 100%; display: flex; align-items: center; padding: 16px">';
+            main = main + '      <div style="width: calc(100% - 70px); display: flex; flex-direction: row; align-items: center;">';
+            main = main + '          <span style="margin-right: 6px; font-size: 24px; color: #757575">Fahrzeugsuche:</span>';
+            main = main + '          <span id="lss-keyboard-search-query" style="margin-right: 6px; font-size: 24px">_</span>';
+            main = main + '      </div>';
             main = main + '      <a id="key_settings_button" href="#" class="btn btn-success navbar-btn btn-sm" style="width: 64px; margin: 0; margin-left: 6px" title="Einstellungen">';
             main = main + '         <span class="glyphicon glyphicon-cog" style="font-size: 16px; margin-top: 2px"></span>';
             main = main + '      </a>';
             main = main + '   </div>';
-            main = main + '   <div id="keyboard_alert_key_settings" style="width: 100%; display: none; flex-direction: column; padding-top: 12px; padding-bottom: 12px">';
-            main = main + '      <div id="keyboard_alert_key_settings_console" style="width: 100%; min-height: 20px; margin-top: 12px; margin-bottom: 12px">';
-            main = main + '         <font></font>';
-            main = main + '      </div>';
+            main = main + '   <div id="keyboard_alert_key_settings" style="width: 100%; display: none; flex-direction: column">';
             main = main + '      <table id="key_settings_table" class="table table-striped tablesorter tablesorter-default">';
-            main = main + '         <div style="width: 100%; padding-bottom: 6px">';
-            main = main + '             <h4>Tastaturbelegung</h4>';
-            main = main + '         </div>';
             main = main + '         <tbody>';
 
             main = main + '         </tbody>';
             main = main + '      </table>';
             main = main + '   </div>';
-            main = main + '   <div style="width: 100%; padding-bottom: 6px">';
-            main = main + '      <font style="font-size: 12px">by ChaosKai93 (build 2017-02-12-0135)</font><a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+            main = main + '   <div style="width: 100%; display: flex; flex-direction: row; align-items: stretch; padding: 6px; font-size: 12px; background: #e0e0e0; border-top: 1px solid #bdbdbd">';
+            main = main + '      <div style="width: 30%; padding: 0px 16px; text-align: left">';
+            main = main + '         <font style="">Made by ChaosKai93</font>';
+            main = main + '      </div>';
+            main = main + '      <div style="width: 40%; padding: 0px 16px; text-align: left">';
+            main = main + '         <font style="">Version: 2017-02-27-0139</font>';
+            main = main + '      </div>';
+            main = main + '      <div style="width: 30%; padding: 0px 16px; text-align: right">';
+            main = main + '         <a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
+            main = main + '      </div>';
             main = main + '   </div>';
             main = main + '</div>';
 
@@ -406,6 +815,35 @@
                 // -             Write HTML to Browser
                 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                 $( "#key_settings_table" ).find("tbody").append(html);
+
+                // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                // -             Add Event-Listener to Button
+                // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                
+                $( '#keyboard_alert_set_key_' + key ).click(function()
+                {
+                    set_key_mode = true;
+                    set_key_name = key;
+
+                    // open modal
+                    $( "#keyboard_alert_modal" ).fadeIn(200);
+                    $( "#keyboard_alert_modal" ).find("div").html('<h2>Drücke die Taste, die du für <b>' + key_settings[key].name + '</b> belegen möchtest.</h2><h4>Drücke ESC zum abbrechen</h4>');
+                });
+                
+                $( '#keyboard_alert_del_key_' + key ).click(function()
+                {
+                    key_settings[key].key = false;
+                    key_settings[key].ctrl = false;
+                    key_settings[key].shift = false;
+                    key_settings[key].alt = false;
+                    
+                    reloadKeySettings();
+                    
+                    // open modal
+                    $( "#keyboard_alert_modal" ).fadeIn(200);
+                    $( "#keyboard_alert_modal" ).find("div").html('<h2>Die Taste für <b>' + key_settings[key].name + '</b> wurde entfernt.</h2>');
+                    $( "#keyboard_alert_modal" ).delay(1800).fadeOut(200);
+                });
             });
         }
 
@@ -417,7 +855,7 @@
 // #
 // # ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
 
-$(function(){
+    
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // -             Key Buttons Show/Hide
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -436,21 +874,16 @@ $(function(){
         }
     });
     
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // -             Update Table on Key Input
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    $( document ).on( "input", function() {
-        updateVehicleTable();
-    });
-    
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
     // -
     // -             Key Action
     // -
     // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-    
-    $(document).on( "keyup", function( event )
+        
+    $(document).on( "keydown", function( event )
     {
+        event.preventDefault();
+        
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // -
         // -             Key: Submit
@@ -459,37 +892,40 @@ $(function(){
         if(!set_key_mode)
         {
             var table = $("#vehicle_show_table_body_all").length ? "#vehicle_show_table_body_all tr":"#vehicle_show_table_rett tr";
+            var addKeyToQuery = true;
 
             // - - - - - Submit  - - - - -
             if(event.which == key_settings.submit.key && ctrl_pressed == key_settings.submit.ctrl && shift_pressed == key_settings.submit.shift && alt_pressed == key_settings.submit.alt)
             {
                 $( "#mission-form" ).submit();
+                addKeyToQuery = false;
             }
 
             // - - - - - Delete  - - - - -
             if(event.which == key_settings.delete.key && ctrl_pressed == key_settings.delete.ctrl && shift_pressed == key_settings.delete.shift && alt_pressed == key_settings.delete.alt)
             {
-                $( "#search_vehicle" ).val(""); updateVehicleTable();
+                search_query = ""; updateVehicleTable();
+                addKeyToQuery = false;
             }
             
             // - - - - - Select more  - - - - -
             if(event.which == key_settings.select_more.key && ctrl_pressed == key_settings.select_more.ctrl && shift_pressed == key_settings.select_more.shift && alt_pressed == key_settings.select_more.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).find("input:not(:checked)").eq(0).click();
                 
-                $( "#search_vehicle" ).val(""); updateVehicleTable();
+                updateVehicleTable();
+                addKeyToQuery = false;
             }
             
             // - - - - - Select less  - - - - -
             if(event.which == key_settings.select_less.key && ctrl_pressed == key_settings.select_less.ctrl && shift_pressed == key_settings.select_less.shift && alt_pressed == key_settings.select_less.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).find("input:checked").last().click();
                 
-                $( "#search_vehicle" ).val(""); updateVehicleTable();
+                updateVehicleTable();
+                addKeyToQuery = false;
             }
             
             // - - - - - Select all  - - - - -
@@ -499,81 +935,106 @@ $(function(){
                     $( this ).find("input").attr('checked', true);
                 });
                 
-                $( "#search_vehicle" ).val(""); updateVehicleTable();
+                updateVehicleTable();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 1  - - - - -
             if(event.which == key_settings.vehicle_1.key && ctrl_pressed == key_settings.vehicle_1.ctrl && shift_pressed == key_settings.vehicle_1.shift && alt_pressed == key_settings.vehicle_1.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(0).find("input").click();
 
                 //$( "#search_vehicle" ).val(""); updateVehicleTable();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 2  - - - - -
             if(event.which == key_settings.vehicle_2.key && ctrl_pressed == key_settings.vehicle_2.ctrl && shift_pressed == key_settings.vehicle_2.shift && alt_pressed == key_settings.vehicle_2.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(1).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 3  - - - - -
             if(event.which == key_settings.vehicle_3.key && ctrl_pressed == key_settings.vehicle_3.ctrl && shift_pressed == key_settings.vehicle_3.shift && alt_pressed == key_settings.vehicle_3.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(2).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 4  - - - - -
             if(event.which == key_settings.vehicle_4.key && ctrl_pressed == key_settings.vehicle_4.ctrl && shift_pressed == key_settings.vehicle_4.shift && alt_pressed == key_settings.vehicle_4.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(3).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 5  - - - - -
             if(event.which == key_settings.vehicle_5.key && ctrl_pressed == key_settings.vehicle_5.ctrl && shift_pressed == key_settings.vehicle_5.shift && alt_pressed == key_settings.vehicle_5.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(4).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 6  - - - - -
             if(event.which == key_settings.vehicle_6.key && ctrl_pressed == key_settings.vehicle_6.ctrl && shift_pressed == key_settings.vehicle_6.shift && alt_pressed == key_settings.vehicle_6.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(5).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 7  - - - - -
             if(event.which == key_settings.vehicle_7.key && ctrl_pressed == key_settings.vehicle_7.ctrl && shift_pressed == key_settings.vehicle_7.shift && alt_pressed == key_settings.vehicle_7.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(6).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 8  - - - - -
             if(event.which == key_settings.vehicle_8.key && ctrl_pressed == key_settings.vehicle_8.ctrl && shift_pressed == key_settings.vehicle_8.shift && alt_pressed == key_settings.vehicle_8.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(7).find("input").click();
+                addKeyToQuery = false;
             }
 
             // - - - - - Ergebnis 9  - - - - -
             if(event.which == key_settings.vehicle_9.key && ctrl_pressed == key_settings.vehicle_9.ctrl && shift_pressed == key_settings.vehicle_9.shift && alt_pressed == key_settings.vehicle_9.alt)
             {
-                $( "#search_vehicle" ).val( $( "#search_vehicle" ).val().substring(0, $( "#search_vehicle" ).val().length - 1) );
                 updateVehicleTable();
                 $( table + ":visible" ).eq(8).find("input").click();
+                addKeyToQuery = false;
+            }
+            
+            
+            // - - - - - Add pressed key to search query  - - - - -
+            
+            if( event.which == 8 )
+            {
+                search_query = search_query.substring(0, search_query.length-1);
+                updateVehicleTable();
+            }
+            
+            if( addKeyToQuery && ( event.which == 32 || (event.which >= 48 && event.which <= 90) || (event.which >= 96 && event.which <= 111) || (event.which >= 186 && event.which <= 221) ) )
+            {
+                search_query = search_query + keyCodeToChar[event.which].key;
+                updateVehicleTable();
+            }
+            
+            if( search_query === "" )
+            {
+                $( "#lss-keyboard-search-query" ).html("_");
+            }
+            else
+            {
+                $( "#lss-keyboard-search-query" ).html(search_query);
             }
         }
 
@@ -655,7 +1116,6 @@ $(function(){
         }
     });
     
-}());
 
 function updateVehicleTable()
 {
@@ -663,12 +1123,12 @@ function updateVehicleTable()
         
     $( table ).each(function() {
 
-        if( $( this ).find("label").text().toLowerCase().indexOf( $( "#search_vehicle" ).val().toLowerCase() ) >= 0 )
+        if( $( this ).find("label").text().toLowerCase().indexOf( search_query.toLowerCase() ) >= 0 )
         {
             // Found vehicle name
             $( this ).css("display", "table-row");
         }
-        else if( $( this ).find("a").text().toLowerCase().indexOf( $( "#search_vehicle" ).val().toLowerCase() ) >= 0 )
+        else if( $( this ).find("a").text().toLowerCase().indexOf( search_query.toLowerCase() ) >= 0 )
         {
             // Found station name
             $( this ).css("display", "table-row");
@@ -679,15 +1139,12 @@ function updateVehicleTable()
             $( this ).css("display", "none");
         }
 
-        if( $( "#search_vehicle" ).val().length === 0 )
+        if( search_query.length === 0 )
         {
             $( this ).css("display", "table-row");
         }
 
     });
-   
-   
-    
 }
 
 // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -695,31 +1152,6 @@ function updateVehicleTable()
 // -             Key Functions
 // -
 // - = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   // -             set Key (call from button)
-   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   function setKey(key)
-   {
-       set_key_mode = true;
-       set_key_name = key;
-       $( "#key_settings_console" ).find("font").text("Drücke die Taste, die Du für diese Funktion belegen möchtest...");
-       
-       // open modal
-       $( "#keyboard_alert_modal" ).fadeIn(200);
-       $( "#keyboard_alert_modal" ).find("div").html('<h2>Drücke die Taste, die du für <b>' + key_settings[key].name + '</b> belegen möchtest.</h2><h4>Drücke ESC zum abbrechen</h4>');
-   }
-
-   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   // -             delete Key (call from button)
-   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    function delKey(key)
-    {
-        set_key_mode = false;
-        setKeyStorage("key_" + key, {'altKey':false,'ctrlKey':false,'metaKey':false,'key':false});
-        $( "#key_settings_console" ).find("font").text("Die Taste '" + key + "' wurde gelöscht!");
-        window.setTimeout(function() { $( "#key_settings_console" ).find("font").text(""); }, 1500);
-    }
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // -
@@ -744,7 +1176,15 @@ function updateVehicleTable()
                 if( value.ctrl )    text = text + "Strg + ";
                 if( value.shift )   text = text + "Shift + ";
                 if( value.alt )     text = text + "Alt + ";
-                text = text + keyCodeToChar[value.key];
+                
+                if( !value.key )
+                {
+                    text = "Nicht belegt";
+                }
+                else
+                {
+                    text = text + keyCodeToChar[value.key].name;
+                }
                 
                 $( "#" + key + "_key_code" ).text(text);
             });
@@ -771,7 +1211,15 @@ function updateVehicleTable()
             if( value.ctrl )    text = text + "Strg + ";
             if( value.shift )   text = text + "Shift + ";
             if( value.alt )     text = text + "Alt + ";
-            text = text + keyCodeToChar[value.key];
+            
+            if( !value.key )
+            {
+                text = "Nicht belegt";
+            }
+            else
+            {
+                text = text + keyCodeToChar[value.key].name;
+            }
 
             $( "#" + key + "_key_code" ).text(text);
         });
@@ -783,5 +1231,3 @@ function updateVehicleTable()
     buildModal();
 
     reloadKeySettings();
-
-    $( "#search_vehicle" ).focus();
