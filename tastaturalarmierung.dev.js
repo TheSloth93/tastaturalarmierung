@@ -7,8 +7,6 @@
 // @grant       none
 // ==/UserScript==
 
-window.gmScripts_GlobalVar = 'search_query';
-
 // # ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
 // #
 // #
@@ -679,7 +677,7 @@ window.gmScripts_GlobalVar = 'search_query';
 
         if(window.location.href.indexOf("missions/") == -1)
         {
-           return;
+           throw new Error("LSS Tastaturalarmierung: wrong page");
         }
 
 
