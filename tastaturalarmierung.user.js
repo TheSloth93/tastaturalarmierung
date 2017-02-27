@@ -2,7 +2,7 @@
 // @name        LSS Tastaturalarmierung
 // @namespace   Leitstellenspiel
 // @include     http*://www.leitstellenspiel.de/*
-// @version     dev
+// @version     2017-02-27-0211
 // @author      ChaosKai93
 // @grant       none
 // ==/UserScript==
