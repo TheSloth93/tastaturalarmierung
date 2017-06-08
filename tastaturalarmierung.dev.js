@@ -748,7 +748,7 @@
             main = main + '         <font style="">Made by ChaosKai93</font>';
             main = main + '      </div>';
             main = main + '      <div style="width: 40%; padding: 0px 16px; text-align: left">';
-            main = main + '         <font style="">Version: 2017-02-27-0139</font>';
+            main = main + '         <font style="">Version: 2017-06-08-0238</font>';
             main = main + '      </div>';
             main = main + '      <div style="width: 30%; padding: 0px 16px; text-align: right">';
             main = main + '         <a href="https://github.com/ChaosKai/tastaturalarmierung" target="_blank" style="font-size: 12px; margin-left: 24px">GitHub Projekt</a>';
@@ -880,7 +880,7 @@
         
     $(document).on( "keydown", function( event )
     {
-        event.preventDefault();
+        event.stop().preventDefault();
         
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // -
@@ -1229,3 +1229,6 @@ function updateVehicleTable()
     buildModal();
 
     reloadKeySettings();
+
+    // quick and dirty hotfix 08.06.2017
+    function checkCombinations() { return true; }
