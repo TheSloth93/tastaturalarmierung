@@ -1229,3 +1229,9 @@ function updateVehicleTable()
     buildModal();
 
     reloadKeySettings();
+
+    // quick and dirty hotfix 12.12.2017
+    var checkCombination = function()
+    {
+        return true;
+    }
