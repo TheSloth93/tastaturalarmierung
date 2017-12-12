@@ -1230,5 +1230,8 @@ function updateVehicleTable()
 
     reloadKeySettings();
 
-    // quick and dirty hotfix 08.06.2017
-    function checkCombinations() { return true; }
+    // quick and dirty hotfix 12.12.2017
+    var checkCombination = function()
+    {
+        return true;
+    }
