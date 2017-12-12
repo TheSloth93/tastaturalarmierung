@@ -1233,5 +1233,10 @@ function updateVehicleTable()
     // quick and dirty hotfix 12.12.2017
     var checkCombination = function()
     {
-        return true;
+        console.log("Sebastians KeyCodes unterdrückt.");
+    }
+    
+    function checkCombination()
+    {
+        console.log("Sebastians KeyCodes unterdrückt.");
     }
